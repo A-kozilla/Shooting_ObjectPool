@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     // Spaceshipコンポーネント
     Spaceship spaceship;
+    public bool GodMode;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
         }
 
         // レイヤー名がBullet (Enemy)またはEnemyの場合は爆発
-        if (layerName == "Bullet(Enemy)" || layerName == "Enemy")
+        if ((layerName == "Bullet(Enemy)" || layerName == "Enemy") && GodMode != true)
         {
             // 爆発する
             spaceship.Explosion();
